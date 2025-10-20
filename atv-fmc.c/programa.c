@@ -21,7 +21,7 @@ int teto(float x) {
 
 // 2. div e mod sem usar / ou %
 int div_inteira(int a, int b) {
-    int q = 0, sinal = ((a < 0) ^ (b < 0)) ? -1 : 1;
+    int q = 0, sinal = ((a < 0) ^ (b < 0)) ?  -1 : 1;
     int aa = a < 0 ? -a : a;
     int bb = b < 0 ? -b : b;
     while (aa >= bb) {
@@ -85,7 +85,7 @@ int mdc_bezout(int a, int b, int *s, int *t) {
 int main() {
     // Teste piso e teto
     float x;
-    printf("Digite um número real para piso e teto: ");
+    printf("Digite um numero real para piso e teto: ");
     scanf("%f", &x);
     printf("Piso: %d\n", piso(x));
     printf("Teto: %d\n", teto(x));
@@ -99,17 +99,17 @@ int main() {
 
     // Teste primos intervalo
     int ini, fim;
-    printf("Digite o início e fim do intervalo para primos: ");
+    printf("Digite o inicio e fim do intervalo para primos: ");
     scanf("%d %d", &ini, &fim);
     primos_intervalo(ini, fim);
 
     // Teste MDC e Bézout
     int s, t;
-    printf("Digite dois inteiros para MDC e Bézout: ");
+    printf("Digite dois inteiros para MDC e Bezout: ");
     scanf("%d %d", &a, &b);
     int mdc = mdc_bezout(a, b, &s, &t);
     printf("MDC(%d, %d) = %d\n", a, b, mdc);
-    printf("Coeficientes de Bézout: s=%d, t=%d -> %d*%d + %d*%d = %d\n", a, s, a, b, t, b, mdc);
+    printf("Coeficientes de Bezout: s=%d, t=%d -> %d*%d + %d*%d = %d\n", a, s, a, b, t, b, mdc);
 
     return 0;
 }

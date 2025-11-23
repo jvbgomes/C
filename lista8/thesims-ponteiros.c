@@ -68,7 +68,7 @@ int simula_sims(int *pfome, int *psede, int *pbanheiro, int *psono, int *ptedio)
 
     *pfome = fome; *psede = sede; *pbanheiro = banheiro; *psono = sono; *ptedio = tedio;
 
-    if (fome == 0) { printf("Game Over! Morreu de fome\n"); return 0; }
+if (fome == 0) { printf("Game Over! Morreu de fome\n"); return 0; }
 if (sede == 0) { printf("Game Over! Morreu de sede\n"); return 0; }
 if (banheiro == 0) { printf("Game Over! Morreu apertado...\n"); return 0; }
 if (sono == 0) { printf("Game Over! Morreu dormindo...\n"); return 0; }

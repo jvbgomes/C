@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
 
@@ -7,7 +8,7 @@ int main() {
     int** matriz;
 
     matriz = malloc(sizeof(int*) * linhas);
-    for(int i = 0; i < colunas; i++) {
+    for(int i = 0; i < linhas; i++) {
         matriz[i] = malloc(sizeof(int) * (colunas + 1));
     }
 
@@ -16,7 +17,7 @@ int main() {
     }
     free(matriz);
 
-
-
+    printf("Matriz alocada e liberada com sucesso!\n"); 
+    
     return 0;
 }

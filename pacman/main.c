@@ -21,7 +21,7 @@ int main() {
         scanf(" %c", &comando);
         move(&m, &heroi, comando, &tempilula);
         if(comando == BOMBA) {
-            explodepilula(heroi.x, heroi.y, 3, &m);
+            explodepilula(heroi.x, heroi.y, 3, &m, &tempilula);
         }
 
         fantasmas(&m);

@@ -98,10 +98,29 @@ void move(MAPA* m, POSICAO* heroi, char direcao, int* tempilula) {
     
 }
 
-void explodepilula(int x, int y, int qtd, MAPA* m) {
-    if(qtd == 0) {
-        return;
-    }
-    m->matriz[x][y+1] = VAZIO;
-    explodepilula(x, y+1, qtd - 1, m);
+void explodepilula(int x, int y, int alcance, MAPA* m, int* tempilula) {
+
+    if(!(*tempilula)) return;
+
+    explodepilula2(x, y, 0, 1, alcance, m);
+    explodepilula2(x, y, 0, -1, alcance, m);
+    explodepilula2(x, y, 1, 0, alcance, m);
+    explodepilula2(x, y, -1, 0, alcance, m);
+
+    *tempilula = 0;
+}
+
+void explodepilula2(int x, int y, int somax, int somay, int qtd, MAPA* m) {
+
+    if(qtd == 0) return;
+
+    int novox = x + somax;
+    int novoy = y + somay;
+
+    if(!ehvalida(m, novox, novoy)) return;
+    if(ehparede(m, novox, novoy)) return;
+
+    m->matriz[novox][novoy] = VAZIO;
+    explodepilula2(novox, novoy, somax, somay, qtd - 1, m);
+
 }

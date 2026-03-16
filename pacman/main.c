@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "mapa.h"
 #include "pacman.h"
-
+#include "ui.h"
 
 int main() {
     MAPA m;

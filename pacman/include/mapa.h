@@ -1,3 +1,5 @@
+#define _MAPA_H_
+
 #define HEROI '@'
 #define FANTASMA 'F'
 #define VAZIO '.'
@@ -25,7 +27,6 @@ typedef struct posicao POSICAO;
 void liberamapa(MAPA* m);
 void alocamapa(MAPA* m);
 void lemapa(MAPA* m);
-void imprimemapa(MAPA* m);
 int encontramapa(MAPA* m, POSICAO* p, char c);
 
 int ehvalida(MAPA* m, int x, int y);

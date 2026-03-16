@@ -1,0 +1,43 @@
+#ifndef UI_H
+#define UI_H
+
+#include "mapa.h"
+
+void imprimemapa(MAPA* m);
+
+char desenhoparede[4][7] = {
+    {"......" },
+    {"......" },
+    {"......" },
+    {"......" }
+};
+
+char desenhofantasma[4][7] = {
+    {" .-.  " },
+    {"| OO| " },
+    {"|   | " },
+    {"'^^^' " }
+};
+
+char desenhoheroi[4][7] = {
+    {" .--. "  },
+    {"/ _.-'"  },
+    {"\\  '-." },
+    {" '--' "  }
+};
+
+char desenhopilula[4][7] = {
+    {"      "},
+    {" .-.  "},
+    {" '-'  "},
+    {"      "}
+};
+
+char desenhovazio[4][7] = {
+    {"      "},
+    {"      "},
+    {"      "},
+    {"      "}
+};
+
+#endif

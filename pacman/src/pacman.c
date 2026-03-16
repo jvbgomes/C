@@ -18,7 +18,7 @@ int praondeofantasmavai(MAPA* m, int xatual, int yatual, int* xdestino, int* yde
     for(int i = 0; i < 10; i++) {
         int posicao = rand() % 4;
         
-        if(podeandar(m, opcoes[posicao][0], opcoes[posicao][1])) {
+        if(podeandar(m, FANTASMA, opcoes[posicao][0], opcoes[posicao][1])) {
             *xdestino = opcoes[posicao][0];
             *ydestino = opcoes[posicao][1];
 
@@ -60,10 +60,9 @@ int ehdirecao(char direcao) {
     return direcao == BAIXO || direcao == CIMA || direcao == ESQUERDA || direcao == DIREITA;
 }
 
-void move(MAPA* m, POSICAO* heroi, char direcao) {
+void move(MAPA* m, POSICAO* heroi, char direcao, int* tempilula) {
 
     if(!ehdirecao(direcao)) {
-        printf("Comando invalido\n");
         return;
     }
    
@@ -85,12 +84,24 @@ void move(MAPA* m, POSICAO* heroi, char direcao) {
             break;
     }
 
-    if(!podeandar(m, proximox, proximoy)) {
+    if(!podeandar(m, HEROI, proximox, proximoy)) {
         return;
+    }
+
+    if(ehpersonagem(m, PILULA, proximox, proximoy)) {
+        *tempilula = 1;
     }
 
     andanomapa(m, heroi->x, heroi->y, proximox, proximoy);
     heroi->x = proximox;
     heroi->y = proximoy;
     
+}
+
+void explodepilula(int x, int y, int qtd, MAPA* m) {
+    if(qtd == 0) {
+        return;
+    }
+    m->matriz[x][y+1] = VAZIO;
+    explodepilula(x, y+1, qtd - 1, m);
 }

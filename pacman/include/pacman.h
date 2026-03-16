@@ -8,7 +8,7 @@
 #define DIREITA 'd'
 #define ESQUERDA 'a'
 
-int acabou();
+int acabou(MAPA* m);
 int ehdirecao(char direcao);
 void move(MAPA* m, POSICAO* heroi, char direcao); 
 void fantasmas(MAPA* m);

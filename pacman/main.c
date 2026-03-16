@@ -20,7 +20,7 @@ int main() {
         move(&m, &heroi, comando);
         fantasmas(&m);
 
-    } while(!acabou());
+    } while(!acabou(&m));
 
     liberamapa(&m);
     return 0;

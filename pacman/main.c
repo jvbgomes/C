@@ -14,6 +14,7 @@ int main() {
 
     do {
 
+        system("cls");
         printf("Tem pilula: %s\n", tempilula ? "SIM" : "NAO");
         imprimemapa(&m);
 

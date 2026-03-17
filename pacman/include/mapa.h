@@ -1,3 +1,4 @@
+#ifndef _MAPA_H_
 #define _MAPA_H_
 
 #define HEROI '@'
@@ -38,3 +39,5 @@ int podeandar(MAPA* m, char personagem, int x, int y);
 
 int ehparede(MAPA*m, int x, int y);
 int ehpersonagem(MAPA* m, char personagem, int x, int y);
+
+#endif

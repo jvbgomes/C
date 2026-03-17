@@ -124,3 +124,4 @@ void explodepilula2(int x, int y, int somax, int somay, int qtd, MAPA* m) {
     explodepilula2(novox, novoy, somax, somay, qtd - 1, m);
 
 }
+

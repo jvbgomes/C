@@ -3,6 +3,41 @@
 #include "../include/mapa.h"
 #include "../include/ui.h"
 
+char desenhoparede[4][7] = {
+    {"......" },
+    {"......" },
+    {"......" },
+    {"......" }
+};
+
+char desenhofantasma[4][7] = {
+    {" .-.  " },
+    {"| OO| " },
+    {"|   | " },
+    {"'^^^' " }
+};
+
+char desenhoheroi[4][7] = {
+    {" .--. "  },
+    {"/ _.-'"  },
+    {"\\  '-." },
+    {" '--' "  }
+};
+
+char desenhopilula[4][7] = {
+    {"      "},
+    {" .-.  "},
+    {" '-'  "},
+    {"      "}
+};
+
+char desenhovazio[4][7] = {
+    {"      "},
+    {"      "},
+    {"      "},
+    {"      "}
+};
+
 void imprimeparte(char desenho[4][7], int parte) {
     printf("%s", desenho[parte]);
 }
@@ -36,8 +71,8 @@ void imprimemapa(MAPA* m) {
                         break;    
 
                 }
-                printf("\n");
             }
+            printf("\n");
         }
     }
 }

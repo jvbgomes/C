@@ -18,7 +18,7 @@
 
 void main() {
     int var1;
-    int *var2;
+    int *var2; // ponteiro para inteiro, que pode armazenar o endereço de uma variável do tipo inteiro.
     int var3;
 
     var1 = 10;
